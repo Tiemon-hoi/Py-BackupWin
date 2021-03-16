@@ -32,6 +32,34 @@ if version < xyzpersion:
 else: 
     print("Backupper has the newest version " + xyzpersion)
 time.sleep(7)
+def mainMenu():
+    print("What do you want to do?")
+    print("1. Backup my Windows folders")
+    print("2. Delete older backup")
+    print("3. Save Backup paths")
+    print("4. Automate the backup")
+    print("5. Quit")
+    selection = int(input("Choose the option you want: "))
+    if selection == 1:
+        print("Updating everything")
+        time.sleep(1)
+        everything()
+    elif selection == 2:
+        print("Updating Kexts")
+        kextsupdate()
+    elif selection == 3:
+        print("Updating OpenCore Drivers")
+        updatedrivers()
+    elif selection == 4:
+        print("Mounting EFI..")
+        efimounting()
+    elif selection == 5:
+        print("Quiting....")
+        os.chdir("..")
+        if os.path.exists("updatetempfolder"):
+            shutil.rmtree(pathdownload)
+        quit()
+mainMenu()
 
 
 
