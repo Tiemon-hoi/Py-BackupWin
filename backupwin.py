@@ -17,19 +17,18 @@ else:
 version=1.0
 version = str(version)
 time.sleep(3)
-page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/OpenCore-Updater/main/script.py').read().decode('utf-8')
+page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/Py-BackupWin/main/backupwin.py').read().decode('utf-8')
 xyzpersion = re.findall(r'version=\s*([\d.]+)', page)
 xyzpersion = str(xyzpersion[0])
 path = os.path.realpath(__file__)
 if version < xyzpersion:
-    print("newer version " + xyzpersion + " available... updating ...")
+    print("newer version " + xyzpersion + " available..., updating ...")
     time.sleep(2)
-    with urllib.request.urlopen("https://github.com/Tiemon-hoi/OpenCore-Updater/raw/main/script.py") as upd:
+    with urllib.request.urlopen("https://github.com/Tiemon-hoi/Py-BackupWin/blob/main/backupwin.py") as upd:
      with open(path, "wb+") as f:
         f.write(upd.read())
     import subprocess
-    subprocess.call(["chmod" ,"+x", __file__])
     os.execv(__file__, sys.argv)
 else: 
-    print("the script has the newest version " + xyzpersion)
+    print("Backupper has the newest version " + xyzpersion)
 time.sleep(7)
