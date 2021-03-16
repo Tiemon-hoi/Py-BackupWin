@@ -14,7 +14,7 @@ if os.path.exists(pathdownload):
 else:
     os.mkdir(pathdownload)
     os.chdir("updatetempfolder")
-version=1.0
+version=1.1
 version = str(version)
 time.sleep(3)
 page = urllib.request.urlopen('https://raw.githubusercontent.com/Tiemon-hoi/Py-BackupWin/main/backupwin.py').read().decode('utf-8')
@@ -24,7 +24,7 @@ path = os.path.realpath(__file__)
 if version < xyzpersion:
     print("newer version " + xyzpersion + " available..., updating ...")
     time.sleep(2)
-    with urllib.request.urlopen("https://github.com/Tiemon-hoi/Py-BackupWin/blob/main/backupwin.py") as upd:
+    with urllib.request.urlopen("https://github.com/Tiemon-hoi/Py-BackupWin/raw/main/backupwin.py") as upd:
      with open(path, "wb+") as f:
         f.write(upd.read())
     import subprocess
@@ -32,3 +32,107 @@ if version < xyzpersion:
 else: 
     print("Backupper has the newest version " + xyzpersion)
 time.sleep(7)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+os.chdir("..")
+if os.path.exists("updatetempfolder"):
+    shutil.rmtree("updatetempfolder")
+time.sleep(2)
+exit()  
